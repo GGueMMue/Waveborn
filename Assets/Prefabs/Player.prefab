@@ -1124,6 +1124,9 @@ MonoBehaviour:
   keyboardInputVector2d: {x: 0, y: 0}
   playerRB: {fileID: 0}
   playerAnim: {fileID: 0}
+  playerBody: {fileID: 4719800350607089273}
+  lerpRot: {x: 0, y: 0, z: 0, w: 0}
+  lerpSpeed: 10
   characterSpeed: 4.5
 --- !u!1 &3385139937205189431
 GameObject:
