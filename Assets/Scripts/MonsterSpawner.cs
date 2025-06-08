@@ -27,7 +27,7 @@ public class MonsterSpawner : MonoBehaviour
         if(spawnTimer >= spawnTime)
         {
             spawnTime = 0;
-            GameObject enemy = GameManager.instance.pools.GetComponent<ObjPooling>().GetGameObject(Random.Range(0, 4);
+            GameObject enemy = GameManager.instance.pools.GetComponent<ObjPooling>().GetGameObject(Random.Range(0, 4));
             enemy.transform.position = spwanPos[Random.Range(1, spwanPos.Length)].position;
         }
     }
