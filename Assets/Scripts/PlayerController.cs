@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] Vector2 keyboardInputVector2d;
+    public Vector2 keyboardInputVector2d;
     [SerializeField] Rigidbody2D playerRB;
     [SerializeField] SPUM_Prefabs playerAnim;
     [SerializeField] GameObject playerBody;
