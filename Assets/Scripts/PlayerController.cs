@@ -49,14 +49,14 @@ public class PlayerController : MonoBehaviour
             {
                 lerpRot = playerBody.transform.rotation;
             }
-            playerBody.transform.rotation = Quaternion.Lerp(
-                playerBody.transform.rotation,
-                lerpRot,
-                Time.fixedDeltaTime * lerpSpeed);
             
             playerAnim.PlayAnimation(1);
         }
         else playerAnim.PlayAnimation(0);
+        playerBody.transform.rotation = Quaternion.Lerp(
+            playerBody.transform.rotation,
+            lerpRot,
+            Time.fixedDeltaTime * lerpSpeed);
 
         Vector2 moveVector = keyboardInputVector2d.normalized * characterSpeed * Time.fixedDeltaTime;
         playerRB.MovePosition(playerRB.position + moveVector);
