@@ -1003,7 +1003,7 @@ GameObject:
   - component: {fileID: 4215441154955507285}
   m_Layer: 5
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1123,6 +1123,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   keyboardInputVector2d: {x: 0, y: 0}
   playerRB: {fileID: 0}
+  playerAnim: {fileID: 0}
   characterSpeed: 4.5
 --- !u!1 &3385139937205189431
 GameObject:
@@ -1751,7 +1752,7 @@ GameObject:
   - component: {fileID: 5584526776903634339}
   m_Layer: 0
   m_Name: UnitRoot
-  m_TagString: Untagged
+  m_TagString: PlayerBody
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
