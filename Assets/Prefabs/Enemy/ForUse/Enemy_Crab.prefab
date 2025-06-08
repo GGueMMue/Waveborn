@@ -128,9 +128,10 @@ GameObject:
   - component: {fileID: 216646713336783020}
   - component: {fileID: 1535214123743072643}
   - component: {fileID: 4249793818174571907}
+  - component: {fileID: 2187680735200008190}
   m_Layer: 0
   m_Name: Enemy_Crab
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -228,8 +229,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 2.5
   playerRB: {fileID: 0}
+  lerpRot: {x: 0, y: 0, z: 0, w: 0}
+  lerpSpeed: 10
   _isDead: 0
   rb: {fileID: 0}
+--- !u!114 &2187680735200008190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9002616464910692879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf461d166b2ef574b9367fc17a995417, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5817092810470845732
 PrefabInstance:
   m_ObjectHideFlags: 0

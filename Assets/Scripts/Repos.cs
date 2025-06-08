@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class Repos : MonoBehaviour
 {
+    Collider2D c2;
+
+    private void Awake()
+    {
+        c2 = GetComponent<Collider2D>();
+    }
     private void OnTriggerExit2D(Collider2D collision)
     {
         if(collision.gameObject.tag == "Area")
@@ -39,6 +45,11 @@ public class Repos : MonoBehaviour
                     break;
 
                 case "Enemy":
+                    if(c2.enabled)
+                    {
+                        transform.Translate(playerDir * 20 + 
+                            new Vector3(Random.Range(-3f, 3f), Random.Range(-3f, 3f), 0f));
+                    }
 
                     break;
 

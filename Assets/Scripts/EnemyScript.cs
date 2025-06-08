@@ -10,7 +10,7 @@ public class EnemyScript : MonoBehaviour
     [SerializeField] Quaternion lerpRot;
     [SerializeField] float lerpSpeed = 10f;
 
-    [SerializeField] bool _isDead;
+    [SerializeField] bool _isDead = false;
 
     [SerializeField] Rigidbody2D rb;
 
