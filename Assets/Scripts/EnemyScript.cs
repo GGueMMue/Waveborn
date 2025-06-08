@@ -26,6 +26,8 @@ public class EnemyScript : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (_isDead) return;
+
         Vector2 dir = playerRB.position - rb.position;
         Vector2 moveVector = dir.normalized * moveSpeed * Time.fixedDeltaTime;
         rb.MovePosition(moveVector + rb.position);
@@ -34,6 +36,8 @@ public class EnemyScript : MonoBehaviour
 
     private void LateUpdate()
     {
+        if (_isDead) return;
+
         if (playerRB.position.x < rb.position.x)
         {
             lerpRot = Quaternion.Euler(0f, 180f, 0f);
