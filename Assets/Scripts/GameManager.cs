@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     public int kill;
     public int exp;
     public int[] nextExp = { 3, 5, 10, 100, 150, 210, 280, 360, 450, 600 };
+    public LevelManager levelManager;
 
     private void Awake()
     {
@@ -24,6 +25,8 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         hp = maxHP;
+
+        levelManager.Select(0);
     }
 
     private void Update()
@@ -44,6 +47,7 @@ public class GameManager : MonoBehaviour
         {
             level++;
             exp = 0;
+            levelManager.Show();
         }
     }
 }

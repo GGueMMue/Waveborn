@@ -15,7 +15,8 @@ MonoBehaviour:
   itemType: 1
   itemId: 1
   itemName: Bow
-  itemDesc: 
+  itemDesc: "\uB370\uBBF8\uC9C0 {0}% \uC99D\uAC00, \uAD00\uD1B5 \uD69F\uC218 {1}
+    \uC99D\uAC00"
   itemIcon: {fileID: 1698285035, guid: ba00d2cc9cfe3aa4dbabe584112b29a8, type: 3}
   baseDamage: 3
   baseCnt: 0

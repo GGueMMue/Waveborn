@@ -15,7 +15,7 @@ MonoBehaviour:
   itemType: 3
   itemId: 3
   itemName: Shoe
-  itemDesc: 
+  itemDesc: "\uC774\uB3D9\uC18D\uB3C4 {0} \uC99D\uAC00"
   itemIcon: {fileID: 113769973, guid: 83bf93558b0ec514a95bd6edcd67f7ac, type: 3}
   baseDamage: 0
   baseCnt: 0

@@ -12,6 +12,8 @@ public class Item : MonoBehaviour
 
     Image icon;
     Text textLeve;
+    Text textName;
+    Text textDesc;
 
     private void Awake()
     {
@@ -20,12 +22,32 @@ public class Item : MonoBehaviour
 
         Text[] texts = GetComponentsInChildren<Text>();
         textLeve = texts[0];
+        textName = texts[1];
+        textDesc = texts[2];
+
+        textName.text = ItemData.itemName;
     }
 
-    private void LateUpdate()
+    private void OnEnable()
     {
         textLeve.text = $"Lv.{level + 1}";
+        switch (ItemData.itemType)
+        {
+            case ItemData.ItemType.MELEE:
+            case ItemData.ItemType.RANGE:
+                textDesc.text = string.Format(ItemData.itemDesc, ItemData.damages[level] * 100, ItemData.cnts[level]);
+                break;
+
+            case ItemData.ItemType.GLOVE:
+            case ItemData.ItemType.SHOE:
+                textDesc.text = string.Format(ItemData.itemDesc, ItemData.damages[level] * 100);
+                break;
+            default:
+                textDesc.text = string.Format(ItemData.itemDesc);
+                break;
+        }
     }
+
 
     public void OnClick()
     {

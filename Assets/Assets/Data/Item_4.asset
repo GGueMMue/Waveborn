@@ -15,7 +15,7 @@ MonoBehaviour:
   itemType: 4
   itemId: 4
   itemName: Potion
-  itemDesc: 
+  itemDesc: "\uC0DD\uBA85\uB825 \uCD5C\uB300\uCE58 \uD68C\uBCF5"
   itemIcon: {fileID: -1395354718, guid: ba00d2cc9cfe3aa4dbabe584112b29a8, type: 3}
   baseDamage: 0
   baseCnt: 0

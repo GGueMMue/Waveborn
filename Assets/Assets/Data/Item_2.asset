@@ -15,7 +15,7 @@ MonoBehaviour:
   itemType: 2
   itemId: 2
   itemName: Ring
-  itemDesc: 
+  itemDesc: "\uACF5\uACA9\uC18D\uB3C4 {0}% \uC99D\uAC00"
   itemIcon: {fileID: 1423080091, guid: 83bf93558b0ec514a95bd6edcd67f7ac, type: 3}
   baseDamage: 0
   baseCnt: 0
