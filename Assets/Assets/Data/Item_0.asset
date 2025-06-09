@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d2cda255c2b5364dabb3a78e666bcd4, type: 3}
+  m_Name: Item_0
+  m_EditorClassIdentifier: 
+  itemType: 0
+  itemId: 0
+  itemName: Sword
+  itemDesc: 
+  itemIcon: {fileID: 133101036, guid: 83bf93558b0ec514a95bd6edcd67f7ac, type: 3}
+  baseDamage: 4.5
+  baseCnt: 3
+  damages:
+  - 0.5
+  - 1
+  - 1.5
+  - 2
+  - 3
+  cnts: 0100000001000000010000000100000003000000
+  projectTile: {fileID: 6519910867676901809, guid: 6b40551b2ed0b9e43af7062d18505b98, type: 3}
