@@ -10,6 +10,11 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     public ObjPooling pools;
 
+    public int level;
+    public int kill;
+    public int exp;
+    public int[] nextExp = { 3, 5, 10, 100, 150, 210, 280, 360, 450, 600 };
+
     private void Awake()
     {
         instance = this;
@@ -22,6 +27,17 @@ public class GameManager : MonoBehaviour
         if(playTime > maxPlayTime )
         {
             playTime = maxPlayTime;
+        }
+    }
+
+    public void GetExp()
+    {
+        exp++;
+
+        if (exp == nextExp[level])
+        {
+            level++;
+            exp = 0;
         }
     }
 }

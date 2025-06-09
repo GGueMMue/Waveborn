@@ -63,7 +63,7 @@ public class EnemyScript : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Weapon")
+        if (collision.gameObject.tag == "Weapon") // || !_isDead)
         {
             hp -= collision.GetComponent<WeaponScript>().damage;
 
@@ -79,6 +79,8 @@ public class EnemyScript : MonoBehaviour
                 col2.enabled = false;
                 rb.simulated = false;
                 animator.SetTrigger("Death");
+                GameManager.instance.kill++;
+                GameManager.instance.GetExp();
             }
         }
         else
