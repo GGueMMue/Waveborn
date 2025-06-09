@@ -9,7 +9,8 @@ public class GameManager : MonoBehaviour
     public PlayerController pc;
     public static GameManager instance;
     public ObjPooling pools;
-
+    public int hp;
+    public int maxHP = 100;
     public int level;
     public int kill;
     public int exp;
@@ -18,6 +19,11 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         instance = this;
+    }
+
+    private void Start()
+    {
+        hp = maxHP;
     }
 
     private void Update()
