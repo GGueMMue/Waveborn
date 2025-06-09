@@ -231,8 +231,11 @@ MonoBehaviour:
   hp: 0
   maxHP: 0
   playerRB: {fileID: 0}
+  knockBack: 3
+  animator: {fileID: 0}
   lerpRot: {x: 0, y: 0, z: 0, w: 0}
   lerpSpeed: 10
+  col2: {fileID: 0}
   _isDead: 0
   rb: {fileID: 0}
 --- !u!114 &6042148255786285221
@@ -326,8 +329,28 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7480188403910742086, guid: 8a9f8c50016fc134ca74d3552918c13a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8167369028910047420}
   m_SourcePrefab: {fileID: 100100000, guid: 8a9f8c50016fc134ca74d3552918c13a, type: 3}
+--- !u!1 &6458123669215769642 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7480188403910742086, guid: 8a9f8c50016fc134ca74d3552918c13a, type: 3}
+  m_PrefabInstance: {fileID: 4490417556950967404}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8167369028910047420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6458123669215769642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c71d8aac05e330498b5b5b4cbc51d3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &7539242759132382894 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6265052036966441666, guid: 8a9f8c50016fc134ca74d3552918c13a, type: 3}
