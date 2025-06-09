@@ -60,8 +60,14 @@ public class WeaponManager : MonoBehaviour
     {
         if (playerController.scanner.nearEnemy == null) return;
 
+        Vector3 enemyPos = playerController.scanner.nearEnemy.position;
+        Vector3 dir = (enemyPos - this.transform.position).normalized;
+        
         Transform bullet = GameManager.instance.pools.GetComponent<ObjPooling>().GetGameObject(prefabID).transform;
         bullet.position = this.gameObject.transform.position;
+        bullet.rotation = Quaternion.FromToRotation(Vector3.up, dir);
+
+        bullet.GetComponent<WeaponScript>().Init(damage, count, dir); // count = per
     }
 
     public void LevelUp(float damage, int count)
@@ -100,7 +106,7 @@ public class WeaponManager : MonoBehaviour
             bullet.Translate(bullet.up * 2f, Space.World);
             //if(id == 0)
             //    bullet.transform.position = this.gameObject.transform.position + new Vector3(0f, 2f, 0f);
-            bullet.GetComponent<WeaponScript>().Init(damage, -1); // -1 == inf
+            bullet.GetComponent<WeaponScript>().Init(damage, -1, Vector3.zero); // -1 == inf
         }
     }
 
