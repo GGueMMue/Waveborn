@@ -30,13 +30,16 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(GameManager.instance.isStop) return;
         keyboardInputVector2d.x = Input.GetAxisRaw("Horizontal");
         keyboardInputVector2d.y = Input.GetAxisRaw("Vertical");
     }
 
     private void FixedUpdate()
     {
-        if(keyboardInputVector2d != Vector2.zero)
+        if (GameManager.instance.isStop) return;
+
+        if (keyboardInputVector2d != Vector2.zero)
         {
 
             if (keyboardInputVector2d.x > 0)

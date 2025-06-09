@@ -29,6 +29,8 @@ public class EnemyScript : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (GameManager.instance.isStop) return;
+
         if (_isDead || animator.GetCurrentAnimatorStateInfo(0).IsName("Hit")) return;
 
         Vector2 dir = playerRB.position - rb.position;
@@ -39,6 +41,8 @@ public class EnemyScript : MonoBehaviour
 
     private void LateUpdate()
     {
+        if (GameManager.instance.isStop) return;
+
         if (_isDead) return;
 
         if (playerRB.position.x < rb.position.x)

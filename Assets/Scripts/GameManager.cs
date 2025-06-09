@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     public int exp;
     public int[] nextExp = { 3, 5, 10, 100, 150, 210, 280, 360, 450, 600 };
     public LevelManager levelManager;
+    public bool isStop = false;
 
     private void Awake()
     {
@@ -31,6 +32,10 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        if (isStop)
+        {
+            return;
+        }
         playTime += Time.deltaTime;
 
         if(playTime > maxPlayTime )
@@ -43,11 +48,23 @@ public class GameManager : MonoBehaviour
     {
         exp++;
 
-        if (exp == nextExp[level])
+        if (exp == nextExp[Mathf.Min(level, nextExp.Length-1)])
         {
             level++;
             exp = 0;
             levelManager.Show();
         }
+    }
+
+    public void Stop()
+    {
+        isStop = true;
+        Time.timeScale = 0f;
+    }
+
+    public void Resume()
+    {
+        isStop=false;
+        Time.timeScale = 1f;
     }
 }

@@ -34,6 +34,8 @@ public class MonsterSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (GameManager.instance.isStop) return;
+
         spawnTimer += Time.deltaTime;
 
         nowLevel = Mathf.Min(Mathf.FloorToInt(GameManager.instance.playTime / 10f), spawnDataList.Length - 1);
