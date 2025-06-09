@@ -40,7 +40,7 @@ public class MonsterSpawner : MonoBehaviour
 
         if(spawnTimer >= spawnDataList[nowLevel].spawnTime)
         {
-            spawnTime = 0;
+            spawnTimer = 0;
             GameObject enemy = GameManager.instance.pools.GetComponent<ObjPooling>().GetGameObject(nowLevel);
             enemy.transform.position = spwanPos[Random.Range(1, spwanPos.Length)].position;
             enemy.GetComponent<EnemyScript>().InitData(spawnDataList[nowLevel]);
