@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.PackageManager;
 using UnityEngine;
 
 public class WeaponManager : MonoBehaviour
@@ -10,6 +11,15 @@ public class WeaponManager : MonoBehaviour
     public int count;
     public float speed;
 
+    float time;
+    PlayerController playerController;
+
+    private void Awake()
+    {
+        playerController = GetComponentInParent<PlayerController>();
+    }
+    [SerializeField] float timer;
+
     private void Start()
     {
         Init();
@@ -17,6 +27,8 @@ public class WeaponManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        timer += Time.deltaTime;
+
         switch (id)
         {
             case 0:
@@ -24,9 +36,16 @@ public class WeaponManager : MonoBehaviour
                 transform.Rotate(0f, 0f, speed * Time.deltaTime);
                 break;
 
-            default:
-
+            case 1:
+                if(timer > speed)
+                {
+                    timer = 0;
+                    FIre();
+                }
                 break;
+            default:
+                break;
+
 
         }
 
@@ -35,6 +54,14 @@ public class WeaponManager : MonoBehaviour
         {
             LevelUp(20, 10);
         }
+    }
+
+    public void FIre()
+    {
+        if (playerController.scanner.nearEnemy == null) return;
+
+        Transform bullet = GameManager.instance.pools.GetComponent<ObjPooling>().GetGameObject(prefabID).transform;
+        bullet.position = this.gameObject.transform.position;
     }
 
     public void LevelUp(float damage, int count)
@@ -86,8 +113,11 @@ public class WeaponManager : MonoBehaviour
                 InstantiateWeapon();
                 break;
 
+            case 1:
+                speed = 0.3f;
+                break;
             default:
-                
+
                 break;
         
         }

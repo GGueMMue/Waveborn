@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6539988927245132102}
   - component: {fileID: 4447263298749992722}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 338529320777728970}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -129,7 +129,7 @@ GameObject:
   - component: {fileID: 4844757492960745019}
   - component: {fileID: -8163307973530628096}
   - component: {fileID: 6042148255786285221}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Enemy_Bat
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -228,6 +228,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 0
+  hp: 0
+  maxHP: 0
   playerRB: {fileID: 0}
   lerpRot: {x: 0, y: 0, z: 0, w: 0}
   lerpSpeed: 10
@@ -316,6 +318,10 @@ PrefabInstance:
     - target: {fileID: 7480188403910742086, guid: 8a9f8c50016fc134ca74d3552918c13a, type: 3}
       propertyPath: m_Name
       value: Bat
+      objectReference: {fileID: 0}
+    - target: {fileID: 7480188403910742086, guid: 8a9f8c50016fc134ca74d3552918c13a, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

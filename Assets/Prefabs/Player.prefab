@@ -1176,6 +1176,7 @@ GameObject:
   - component: {fileID: 3650393480309000481}
   - component: {fileID: 451602137310329297}
   - component: {fileID: 4215441154955507285}
+  - component: {fileID: 3826094308537394140}
   m_Layer: 5
   m_Name: Player
   m_TagString: Player
@@ -1306,6 +1307,23 @@ MonoBehaviour:
   lerpRot: {x: 0, y: 0, z: 0, w: 0}
   lerpSpeed: 10
   characterSpeed: 4.5
+--- !u!114 &3826094308537394140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3234885667644114242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d48c64a6ada403b4c8d6e42b70e8d66e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  range: 7
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 64
+  nearEnemy: {fileID: 0}
 --- !u!1 &3385139937205189431
 GameObject:
   m_ObjectHideFlags: 0
@@ -1832,7 +1850,7 @@ Transform:
   m_GameObject: {fileID: 4017047561446422428}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.3, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

@@ -6,6 +6,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public Vector2 keyboardInputVector2d;
+    public Scanner scanner;
     [SerializeField] Rigidbody2D playerRB;
     [SerializeField] SPUM_Prefabs playerAnim;
     [SerializeField] GameObject playerBody;
@@ -18,6 +19,7 @@ public class PlayerController : MonoBehaviour
     {
         playerRB = GetComponent<Rigidbody2D>();
         playerAnim = GetComponent<SPUM_Prefabs>();
+        scanner = GetComponent<Scanner>();
     }
     // Start is called before the first frame update
     void Start()
