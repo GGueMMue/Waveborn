@@ -35,6 +35,19 @@ public class PlayerController : MonoBehaviour
         keyboardInputVector2d.y = Input.GetAxisRaw("Vertical");
     }
 
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (GameManager.instance.isStop) return;
+
+        GameManager.instance.hp -= Time.deltaTime * 10;
+
+        if(GameManager.instance.hp < 0)
+        {
+            playerAnim.PlayAnimation(2);
+            StartCoroutine(GameManager.instance.Delay());
+        }
+    }
+
     private void FixedUpdate()
     {
         if (GameManager.instance.isStop) return;

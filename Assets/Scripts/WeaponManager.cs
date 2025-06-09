@@ -66,6 +66,8 @@ public class WeaponManager : MonoBehaviour
         bullet.rotation = Quaternion.FromToRotation(Vector3.up, dir);
 
         bullet.GetComponent<WeaponScript>().Init(damage, count, dir); // count = per
+        AudioManager.instance.PlaySFX(AudioManager.SFX.RANGE);
+
     }
 
     public void LevelUp(float damage, int count)

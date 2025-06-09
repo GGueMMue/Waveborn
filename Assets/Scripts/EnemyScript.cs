@@ -76,6 +76,8 @@ public class EnemyScript : MonoBehaviour
             if(hp > 0)
             {
                 animator.SetTrigger("Hit");
+                AudioManager.instance.PlaySFX(AudioManager.SFX.HIT1);
+
             }
             else
             {
@@ -85,6 +87,10 @@ public class EnemyScript : MonoBehaviour
                 animator.SetTrigger("Death");
                 GameManager.instance.kill++;
                 GameManager.instance.GetExp();
+
+                if(!GameManager.instance.isStop)
+                    AudioManager.instance.PlaySFX(AudioManager.SFX.DEAD);
+
             }
         }
         else
