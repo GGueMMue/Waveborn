@@ -16,14 +16,10 @@ public class WeaponManager : MonoBehaviour
 
     private void Awake()
     {
-        playerController = GetComponentInParent<PlayerController>();
+        playerController = GameManager.instance.pc;
     }
     [SerializeField] float timer;
 
-    private void Start()
-    {
-        Init();
-    }
     // Update is called once per frame
     void Update()
     {
@@ -79,6 +75,7 @@ public class WeaponManager : MonoBehaviour
         {
             InstantiateWeapon();
         }
+        playerController.BroadcastMessage("ApplyGear", SendMessageOptions.DontRequireReceiver);
     }
 
     void InstantiateWeapon()
@@ -110,8 +107,24 @@ public class WeaponManager : MonoBehaviour
         }
     }
 
-    public void Init()
+    public void Init(ItemData data)
     {
+        name = "Weapon" + data.itemId;
+        transform.parent = playerController.transform;
+        transform.localPosition = Vector3.zero;
+
+        id = data.itemId;
+        damage = data.baseDamage;
+        count = data.baseCnt;
+
+        for(int i =0; i < GameManager.instance.pools.enemyObjectsList.Length; i++)
+        {
+            if(data.projectTile == GameManager.instance.pools.enemyObjectsList[i])
+            {
+                prefabID = i;
+                break;
+            }
+        }
         switch (id) 
         {
             case 0:
@@ -127,6 +140,7 @@ public class WeaponManager : MonoBehaviour
                 break;
         
         }
+        playerController.BroadcastMessage("ApplyGear", SendMessageOptions.DontRequireReceiver);
 
     }
 }
