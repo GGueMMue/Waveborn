@@ -5,12 +5,14 @@ using UnityEngine;
 public class EnemyScript : MonoBehaviour
 {
     public float moveSpeed;
+    public float hp;
+    public float maxHP;
     public Rigidbody2D playerRB;
 
     [SerializeField] Quaternion lerpRot;
     [SerializeField] float lerpSpeed = 10f;
 
-    [SerializeField] bool _isDead = false;
+    [SerializeField] bool _isDead;
 
     [SerializeField] Rigidbody2D rb;
 
@@ -21,7 +23,6 @@ public class EnemyScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        playerRB = GameManager.instance.pc.GetComponent<Rigidbody2D>();
     }
 
     private void FixedUpdate()
@@ -50,6 +51,19 @@ public class EnemyScript : MonoBehaviour
             rb.transform.rotation,
             lerpRot,
             Time.fixedDeltaTime* lerpSpeed);
+    }
+
+    public void InitData(SpawnData data)
+    {
+        maxHP = data.hp;
+        moveSpeed = data.speed;
+        hp = data.hp;
+    }
+    private void OnEnable()
+    {
+        playerRB = GameManager.instance.pc.GetComponent<Rigidbody2D>();
+        _isDead = false;
+        hp = maxHP;
     }
     // Update is called once per frame
     void Update()

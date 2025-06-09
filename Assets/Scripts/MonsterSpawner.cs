@@ -1,11 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+
+[System.Serializable]
+public class SpawnData 
+{
+    public string monsterName;
+    public float spawnTime;
+    public int hp;
+    public float speed;
+}
+
 
 public class MonsterSpawner : MonoBehaviour
 {
     public Transform[] spwanPos;
-
+    public SpawnData[] spawnDataList;
+    int nowLevel;
     float spawnTimer = 0;
     float spawnTime = 0.2f;
 
@@ -24,11 +36,14 @@ public class MonsterSpawner : MonoBehaviour
     {
         spawnTimer += Time.deltaTime;
 
-        if(spawnTimer >= spawnTime)
+        nowLevel = Mathf.Min(Mathf.FloorToInt(GameManager.instance.playTime / 10f), spawnDataList.Length - 1);
+
+        if(spawnTimer >= spawnDataList[nowLevel].spawnTime)
         {
             spawnTime = 0;
-            GameObject enemy = GameManager.instance.pools.GetComponent<ObjPooling>().GetGameObject(Random.Range(0, 4));
+            GameObject enemy = GameManager.instance.pools.GetComponent<ObjPooling>().GetGameObject(nowLevel);
             enemy.transform.position = spwanPos[Random.Range(1, spwanPos.Length)].position;
+            enemy.GetComponent<EnemyScript>().InitData(spawnDataList[nowLevel]);
         }
     }
 }
