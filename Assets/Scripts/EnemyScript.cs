@@ -59,6 +59,31 @@ public class EnemyScript : MonoBehaviour
         moveSpeed = data.speed;
         hp = data.hp;
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Weapon")
+        {
+            hp -= collision.GetComponent<WeaponScript>().damage;
+
+            if(hp > 0)
+            {
+
+            }
+            else
+            {
+                Dead();
+            }
+        }
+        else
+        {
+
+        }
+    }
+
+    void Dead()
+    {
+        gameObject.SetActive(false);
+    }
     private void OnEnable()
     {
         playerRB = GameManager.instance.pc.GetComponent<Rigidbody2D>();

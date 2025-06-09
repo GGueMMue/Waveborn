@@ -35,7 +35,7 @@ public class ObjPooling : MonoBehaviour
 
         if(sel == null)
         {
-            sel = Instantiate(enemyObjectsList[i], this.gameObject.transform.position, Quaternion.identity);
+            sel = Instantiate(enemyObjectsList[i], this.gameObject.transform.position, this.gameObject.transform.rotation);
             enemyObjectPools[i].Add(sel);
         }
         return sel;
