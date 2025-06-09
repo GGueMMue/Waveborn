@@ -52,7 +52,7 @@ public class WeaponManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space)) 
         {
-            LevelUp(20, 10);
+            LevelUp(10, 1);
         }
     }
 
